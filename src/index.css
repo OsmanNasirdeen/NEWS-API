@@ -1,0 +1,29 @@
+body{
+}
+.img-article{
+    width: 100%;
+    background: green;
+    
+}
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+.article-container{
+/* max-height: 360px; */
+width: fit-content;
+}
+@media screen and (min-width:992px) {
+        .card{
+            width: 17.5rem; 
+        }
+}
+@media screen and (max-width:768px) {
+        .card{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .article-container{
+            width: 100vw;
+        }
+}
