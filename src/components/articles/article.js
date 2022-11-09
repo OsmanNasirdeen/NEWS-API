@@ -1,24 +1,23 @@
-import cardPic from "./demo-picture.jpg";
-const Article = ({ cardText }) => {
+// import cardPic from "./demo-picture.jpg";
+const Article = ({ url, urlToImage, content, publishedAt, description }) => {
   return (
     <div
-      className="atricle-container
-    container my-4">
+      className="article-container
+    container my-1">
       <div className="card d-flex flex-lg-column">
         <img
           className="card-img-top"
-          src="https://picsum.photos/300/200"
-          alt="Card image cap"
+          src={urlToImage}
+          alt="post_image"
+          width="300"
+          height="200"
         />
         <div className="card-body">
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <h5 className="card-title">Card title</h5>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
+          <p className="card-text">{`${description.slice(0, 79)}...`}</p>
+          <a href={url} className="btn btn-primary mb-3 mb-lg-1">
+            ReadMore
           </a>
+          <h5 className="card-date">{publishedAt}</h5>
         </div>
       </div>
     </div>

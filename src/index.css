@@ -1,29 +1,54 @@
 body{
+    font-size: clamp(1.2rem,
+        0.75rem + 1.5vw,
+        1.2rem);
 }
-.img-article{
-    width: 100%;
-    background: green;
-    
-}
+
 img {
     max-inline-size: 100%;
     block-size: auto;
 }
 .article-container{
-/* max-height: 360px; */
-width: fit-content;
+
+}
+.card{
+    height: 26rem;
 }
 @media screen and (min-width:992px) {
         .card{
             width: 17.5rem; 
+            max-height: 25rem;
+            
         }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:991px) {
         .card{
             display: flex;
             flex-direction: row-reverse;
+            justify-content: start;
+            height: 23rem;
+            
+        }
+        .card-body{
+            /* max-width: 60%; */
+            
+        }
+        .card > img{
+            width: 210px;
+            height: 23rem;
+            
         }
         .article-container{
             width: 100vw;
+            
+            
         }
+}
+/* card text style */
+.card-text{
+    font-weight: bold;
+}
+/* card date style */
+.card-date{
+    color: #FF5D73;
 }
