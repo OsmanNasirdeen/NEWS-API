@@ -20,12 +20,12 @@ const Articles = () => {
   }, [endPoint]);
 
   return (
-    <div className="container my-4">
-      <div className="row g-4">
+    <div className="container articles-container my-4">
+      <div className="row g-4 g-lg-1 g-md-3">
         {posts.map((post) => {
           const { url, urlToImage, content, publishedAt, description } = post;
           return (
-            <div className="col col-lg-3">
+            <div className="col-12 col-lg-3 col-md-6">
               <Article
                 url={url}
                 urlToImage={urlToImage}

@@ -2,16 +2,18 @@
 const Article = ({ url, urlToImage, content, publishedAt, description }) => {
   return (
     <div
-      className="article-container
-    container my-1">
-      <div className="card d-flex flex-lg-column">
-        <img
-          className="card-img-top"
-          src={urlToImage}
-          alt="post_image"
-          width="300"
-          height="200"
-        />
+      className="container article-container
+     my-1">
+      <div className="card container-card d-flex flex-lg-column">
+        <div className="card-image-container">
+          <img
+            className="card-img-top img-fluid"
+            src={urlToImage}
+            alt="post_image"
+            width="300"
+            height="200"
+          />
+        </div>
         <div className="card-body">
           <p className="card-text">{`${description.slice(0, 79)}...`}</p>
           <a href={url} className="btn btn-primary mb-3 mb-lg-1">
