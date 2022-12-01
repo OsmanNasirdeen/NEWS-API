@@ -15,7 +15,7 @@ const Article = ({ url, urlToImage, content, publishedAt, description }) => {
           />
         </div>
         <div className="card-body">
-          <p className="card-text">{`${description.slice(0, 79)}...`}</p>
+          <p className="card-text">{`${description.slice(0, 79)}...`} </p>
           <a href={url} className="btn btn-primary mb-3 mb-lg-1">
             ReadMore
           </a>

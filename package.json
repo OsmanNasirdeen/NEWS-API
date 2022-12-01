@@ -1,6 +1,7 @@
 {
   "name": "news-app",
   "version": "0.1.0",
+  "proxy":"http://localhost:700",
   "private": true,
   "dependencies": {
     "axios": "^1.1.3",

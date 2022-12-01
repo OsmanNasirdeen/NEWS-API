@@ -1,6 +1,4 @@
-// import React from "react";
-import "../../index.css";
-const Navbar = () => {
+const Navbar = ({ getCategoryData }) => {
   return (
     <>
       <nav className="nav container d-flex navbar navbar-expand-lg navbar-light bg-light px-4">
@@ -27,7 +25,7 @@ const Navbar = () => {
         <div
           className="collapse navbar-collapse d-lg-flex justify-content-lg-between"
           id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav mr-auto" onClick={getCategoryData}>
             <li className="nav-item active">
               <a className="nav-link" href="#">
                 Home <span className="sr-only">(current)</span>
@@ -35,7 +33,12 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Link
+                politics
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Business
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -47,34 +50,32 @@ const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="true">
-                Dropdown
+                Sports
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="#">
-                  Action
+                  Football
                 </a>
                 <a className="dropdown-item" href="#">
-                  Another action
+                  Tennis
                 </a>
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="#">
-                  Something else here
+                  NBA
+                </a>
+                <a className="dropdown-item" href="#">
+                  Cricket
                 </a>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" href="#">
-                Disabled
+              <a className="nav-link " href="#">
+                Entertainment
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" href="#">
-                Disabled1
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#">
-                Disabled2
+              <a className="nav-link " href="#">
+                Technology
               </a>
             </li>
           </ul>
