@@ -17,7 +17,12 @@ const Articles = ({ posts }) => {
                   urlToImage={urlToImage}
                   content={content}
                   publishedAt={publishedAt}
-                  description={description}
+                  // slice the description if lengths of contents > 78
+                  description={
+                    typeof description === "string" && description.length > 78
+                      ? description.slice(0, 78)
+                      : description
+                  }
                 />
               </div>
             );
