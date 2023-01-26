@@ -10,7 +10,7 @@ function App() {
 
   const getData = () => {
     axios
-      .get("http://localhost:7000/")
+      .get("https://newsapp-242j.onrender.com/")
       .then((response) => {
         setPosts(response.data.articles);
       })
