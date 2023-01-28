@@ -5,7 +5,6 @@ import Navbar from "./components/navbar/navbar";
 import Articles from "./components/articles/articles";
 
 function App() {
-  // let currentDate = new Date().toJSON().slice(0, 10);
   const [posts, setPosts] = useState([]);
 
   const getData = () => {
