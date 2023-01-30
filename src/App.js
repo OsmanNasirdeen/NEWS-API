@@ -13,7 +13,7 @@ function App() {
       alert("please input text to be search");
     } else {
       axios
-        .get(`http://localhost:7000/top-headlines/${userInput}`)
+        .get(`https://newsapp-242j.onrender.com/top-headlines/${userInput}`)
         .then((response) => {
           setPosts(response.data.articles);
         })
@@ -27,7 +27,9 @@ function App() {
     const target = e.target.innerText;
     if (target !== "Sports") {
       axios
-        .get(`http://localhost:7000/top-headlines?category=${target}`)
+        .get(
+          `https://newsapp-242j.onrender.com/top-headlines?category=${target}`
+        )
         .then((response) => {
           setPosts(response.data.articles);
         })
