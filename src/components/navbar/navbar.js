@@ -1,4 +1,4 @@
-const Navbar = ({ getCategoryData }) => {
+const Navbar = ({ getCategoryData, getSearchData }) => {
   return (
     <>
       <nav className="nav container d-flex navbar navbar-expand-lg navbar-light bg-light px-4">
@@ -81,12 +81,15 @@ const Navbar = ({ getCategoryData }) => {
           </ul>
           <form className="d-flex ml-auto">
             <input
-              className="form-control me-2"
+              className="form-control me-2 user-input"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button
+              className="btn btn-outline-success"
+              type="button"
+              onClick={getSearchData}>
               Search
             </button>
           </form>

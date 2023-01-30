@@ -1,4 +1,4 @@
-const Article = ({ url, urlToImage, content, publishedAt, description }) => {
+const Article = ({ url, urlToImage, title, publishedAt }) => {
   return (
     <div
       className="container article-container
@@ -14,7 +14,7 @@ const Article = ({ url, urlToImage, content, publishedAt, description }) => {
           />
         </div>
         <div className="card-body">
-          <p className="card-text">{description} </p>
+          <p className="card-text">{title} </p>
           <a href={url} className="btn btn-primary mb-3 mb-lg-1">
             ReadMore
           </a>

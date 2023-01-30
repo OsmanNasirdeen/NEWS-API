@@ -8,20 +8,19 @@ const Articles = ({ posts }) => {
           <h2 className="text-center">"Loading... "</h2>
         ) : (
           posts.map((post, index) => {
-            const { url, urlToImage, content, publishedAt, description } = post;
+            const { url, urlToImage, publishedAt, title } = post;
             return (
               <div className="col-12 col-lg-3 col-md-6">
                 <Article
                   key={index}
                   url={url}
                   urlToImage={urlToImage}
-                  content={content}
                   publishedAt={publishedAt}
-                  // slice the description if lengths of contents > 78
-                  description={
-                    typeof description === "string" && description.length > 78
-                      ? description.slice(0, 78)
-                      : description
+                  // slice the title if lengths of contents > 78
+                  title={
+                    typeof title === "string" && title.length > 78
+                      ? title.slice(0, 78)
+                      : title
                   }
                 />
               </div>
