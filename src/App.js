@@ -25,6 +25,9 @@ function App() {
 
   const getCategoryData = (e) => {
     const target = e.target.innerText;
+    if (target == "Home") {
+      getData();
+    }
     if (target !== "Sports") {
       axios
         .get(
