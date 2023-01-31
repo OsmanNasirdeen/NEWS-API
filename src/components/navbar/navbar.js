@@ -28,7 +28,7 @@ const Navbar = ({ getCategoryData, getSearchData }) => {
           <ul className="navbar-nav mr-auto" onClick={getCategoryData}>
             <li className="nav-item active">
               <a className="nav-link" href="#">
-                Home <span className="sr-only">(current)</span>
+                Home
               </a>
             </li>
             <li className="nav-item">
@@ -39,6 +39,11 @@ const Navbar = ({ getCategoryData, getSearchData }) => {
             <li className="nav-item">
               <a className="nav-link" href="#">
                 Business
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Health
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -71,6 +76,11 @@ const Navbar = ({ getCategoryData, getSearchData }) => {
             <li className="nav-item">
               <a className="nav-link " href="#">
                 Entertainment
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link " href="#">
+                Science
               </a>
             </li>
             <li className="nav-item">
