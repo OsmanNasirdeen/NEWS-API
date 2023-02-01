@@ -9,9 +9,11 @@ function App() {
 
   const getSearchData = () => {
     const userInput = document.querySelector(".user-input").value;
+    const inputField = document.querySelector(".user-input");
     if (!userInput) {
-      alert("please input text to be search");
+      inputField.classList.add("search-field-validation");
     } else {
+      inputField.classList.remove("search-field-validation");
       axios
         .get(`https://newsapp-242j.onrender.com/top-headlines/${userInput}`)
         .then((response) => {

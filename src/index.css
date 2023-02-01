@@ -65,3 +65,8 @@ img {
     height: fit-content;
 }
 }
+
+/* validating input field on search btn click */
+ .search-field-validation{
+    border-color: #FF5D73;
+ }
