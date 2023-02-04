@@ -12,8 +12,10 @@ function App() {
     const inputField = document.querySelector(".user-input");
     if (!userInput) {
       inputField.classList.add("search-field-validation");
+      setTimeout(() => {
+        inputField.classList.remove("search-field-validation");
+      }, 4000);
     } else {
-      inputField.classList.remove("search-field-validation");
       axios
         .get(`https://newsapp-242j.onrender.com/top-headlines/${userInput}`)
         .then((response) => {
@@ -27,7 +29,7 @@ function App() {
 
   const getCategoryData = (e) => {
     const target = e.target.innerText;
-    if (target == "Home") {
+    if (target === "Home") {
       getData();
     }
     if (target !== "Sports") {
