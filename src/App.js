@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import Navbar from "./components/navbar/navbar";
 import Articles from "./components/articles/articles";
+import Footer from "./components/footer/footer";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -31,8 +32,7 @@ function App() {
     const target = e.target.innerText;
     if (target === "Home") {
       getData();
-    }
-    if (target !== "Sports") {
+    } else {
       axios
         .get(
           `https://newsapp-242j.onrender.com/top-headlines?category=${target}`
@@ -65,6 +65,7 @@ function App() {
     <div className="App">
       <Navbar getCategoryData={getCategoryData} getSearchData={getSearchData} />
       <Articles posts={posts} />
+      <Footer />
     </div>
   );
 }

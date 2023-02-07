@@ -93,3 +93,7 @@ img {
      animation: spin 5s linear infinite;
      
  }
+
+ .social-links > li, .health-items > li, .sports-items > li {
+    list-style: none;
+ }
