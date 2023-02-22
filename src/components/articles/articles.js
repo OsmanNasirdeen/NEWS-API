@@ -2,11 +2,11 @@ import Article from "./article";
 
 const Articles = ({ posts }) => {
   return (
-    <div className="container articles-container my-4">
+    <div className="container articles-container my-4 ">
       {/*  loader spin  */}
       <div className="loader"></div>
 
-      <div className="row g-4 g-lg-1 g-md-3 ">
+      <div className="row articles-container-main g-4 g-lg-1 g-md-3 ">
         {posts.map((post, index) => {
           const { url, urlToImage, publishedAt, title } = post;
           return (
@@ -31,8 +31,4 @@ const Articles = ({ posts }) => {
   );
 };
 
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
-  loader.style.display = "none";
-});
 export default Articles;

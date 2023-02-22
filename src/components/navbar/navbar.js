@@ -1,7 +1,7 @@
 const Navbar = ({ getCategoryData, getSearchData }) => {
   return (
     <>
-      <nav className="nav container d-flex navbar navbar-expand-lg navbar-light bg-light px-4">
+      <nav className="nav container-fluid container-xl d-flex navbar navbar-expand-lg navbar-light bg-light px-4">
         <a className="navbar-brand" href="#">
           <img
             src="https://cdn-icons-png.flaticon.com/512/21/21601.png"

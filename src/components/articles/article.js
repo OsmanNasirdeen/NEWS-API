@@ -9,8 +9,8 @@ const Article = ({ url, urlToImage, title, publishedAt }) => {
             className="card-img-top img-fluid"
             src={urlToImage}
             alt="post_image"
-            width="300"
-            height="200"
+            // width="300"
+            // height="200"
           />
         </div>
         <div className="card-body">
