@@ -3,19 +3,37 @@ import { useState, useEffect } from "react";
 
 import Navbar from "./components/navbar/navbar";
 import Articles from "./components/articles/articles";
+import Footer from "./components/footer/footer";
 
 function App() {
   const [posts, setPosts] = useState([]);
 
+  const displayLoaderSpin = (status) => {
+    const loader = document.querySelector(".loader");
+    const articlesContainer = document.querySelector(".articles-container-main");
+    if (status === "block") {
+      articlesContainer.classList.add("fade-in");
+    } else {
+      articlesContainer.classList.remove("fade-in");
+    }
+    loader.style.display = status;
+  };
+
   const getSearchData = () => {
+    displayLoaderSpin("block");
     const userInput = document.querySelector(".user-input").value;
+    const inputField = document.querySelector(".user-input");
     if (!userInput) {
-      alert("please input text to be search");
+      inputField.classList.add("search-field-validation");
+      setTimeout(() => {
+        inputField.classList.remove("search-field-validation");
+      }, 4000);
     } else {
       axios
         .get(`https://newsapp-242j.onrender.com/top-headlines/${userInput}`)
         .then((response) => {
           setPosts(response.data.articles);
+          displayLoaderSpin("none");
         })
         .catch((response) => {
           console.log(response);
@@ -24,17 +42,18 @@ function App() {
   };
 
   const getCategoryData = (e) => {
+    displayLoaderSpin("block");
     const target = e.target.innerText;
-    if (target == "Home") {
+    if (target === "Home") {
       getData();
-    }
-    if (target !== "Sports") {
+    } else {
       axios
         .get(
           `https://newsapp-242j.onrender.com/top-headlines?category=${target}`
         )
         .then((response) => {
           setPosts(response.data.articles);
+          displayLoaderSpin("none");
         })
         .catch((response) => {
           console.log(response);
@@ -47,6 +66,21 @@ function App() {
       .get("https://newsapp-242j.onrender.com/")
       .then((response) => {
         setPosts(response.data.articles);
+        displayLoaderSpin("none");
+      })
+      .catch((response) => {
+        console.log(response);
+      });
+  };
+  const getSearchTerm = (e) => {
+    const target = e.target.innerText;
+    displayLoaderSpin("block");
+    axios
+      .get(`https://newsapp-242j.onrender.com/top-headlines/${target}`)
+      .then((response) => {
+        setPosts(response.data.articles);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        displayLoaderSpin("none");
       })
       .catch((response) => {
         console.log(response);
@@ -61,6 +95,7 @@ function App() {
     <div className="App">
       <Navbar getCategoryData={getCategoryData} getSearchData={getSearchData} />
       <Articles posts={posts} />
+      <Footer getSearchTerm={getSearchTerm} />
     </div>
   );
 }

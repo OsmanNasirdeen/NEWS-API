@@ -1,7 +1,7 @@
 const Navbar = ({ getCategoryData, getSearchData }) => {
   return (
     <>
-      <nav className="nav container d-flex navbar navbar-expand-lg navbar-light bg-light px-4">
+      <nav className="nav container-fluid container-xl d-flex navbar navbar-expand-lg navbar-light bg-light px-4">
         <a className="navbar-brand" href="#">
           <img
             src="https://cdn-icons-png.flaticon.com/512/21/21601.png"
@@ -46,7 +46,12 @@ const Navbar = ({ getCategoryData, getSearchData }) => {
                 Health
               </a>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Sports
+              </a>
+            </li>
+            {/* <li className="nav-item dropdown"> 
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -64,7 +69,6 @@ const Navbar = ({ getCategoryData, getSearchData }) => {
                 <a className="dropdown-item" href="#">
                   Tennis
                 </a>
-                <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="#">
                   NBA
                 </a>
@@ -72,7 +76,7 @@ const Navbar = ({ getCategoryData, getSearchData }) => {
                   Cricket
                 </a>
               </div>
-            </li>
+  </li>*/}
             <li className="nav-item">
               <a className="nav-link " href="#">
                 Entertainment
