@@ -10,7 +10,9 @@ function App() {
 
   const displayLoaderSpin = (status) => {
     const loader = document.querySelector(".loader");
-    const articlesContainer = document.querySelector(".articles-container-main");
+    const articlesContainer = document.querySelector(
+      ".articles-container-main"
+    );
     if (status === "block") {
       articlesContainer.classList.add("fade-in");
     } else {
@@ -20,7 +22,6 @@ function App() {
   };
 
   const getSearchData = () => {
-    displayLoaderSpin("block");
     const userInput = document.querySelector(".user-input").value;
     const inputField = document.querySelector(".user-input");
     if (!userInput) {
@@ -29,6 +30,7 @@ function App() {
         inputField.classList.remove("search-field-validation");
       }, 4000);
     } else {
+      displayLoaderSpin("block");
       axios
         .get(`https://newsapp-242j.onrender.com/top-headlines/${userInput}`)
         .then((response) => {
